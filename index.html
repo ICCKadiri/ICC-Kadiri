@@ -1,11 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Cricket Turf Booking</title>
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
-</html>
+
+import React from "react";
+
+export default function CricketTurfBooking() {
+  return (
+    <div className="min-h-screen bg-gray-50 text-gray-900">
+      <header className="bg-green-700 shadow-sm sticky top-0 z-20">
+        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+          <h1 className="text-lg font-bold text-white">ICC.KADIRI</h1>
+          <h2 className="text-lg font-bold text-white">Indians Cricket Court</h2>
+          <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-white">
+            <a href="#slots" className="hover:text-yellow-300">Book Slot</a>
+            <a href="#pricing" className="hover:text-yellow-300">Pricing</a>
+            <a href="#payment" className="hover:text-yellow-300">Payment</a>
+          </nav>
+        </div>
+      </header>
+
+      <main className="max-w-6xl mx-auto px-6 py-12">
+        <section id="slots" className="mb-16">
+          <h2 className="text-2xl font-bold mb-4">Select Your Slot</h2>
+          <form className="grid gap-4 bg-white p-6 rounded-lg shadow-md">
+            <input type="date" className="p-3 border rounded-md" required />
+            <select className="p-3 border rounded-md" required>
+              <option value="">Select Time</option>
+              <option>5 AM - 6 AM</option>
+              <option>6 AM - 7 AM</option>
+              <option>7 AM - 8 AM</option>
+              <option>8 AM - 9 AM</option>
+              <option>5 PM - 6 PM</option>
+              <option>6 PM - 7 PM</option>
+              <option>7 PM - 8 PM</option>
+              <option>8 PM - 9 PM</option>
+              <option>9 PM - 10 PM</option>
+            </select>
+            <input type="text" placeholder="Your Name" className="p-3 border rounded-md" required />
+            <input type="tel" placeholder="Phone Number" className="p-3 border rounded-md" required />
+            <button type="submit" className="bg-green-700 text-white px-4 py-2 rounded-md">Confirm Slot</button>
+          </form>
+        </section>
+
+        <section id="pricing" className="mb-16">
+          <h2 className="text-2xl font-bold mb-4">Pricing</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <PriceCard title="Only" price="₹400/hr" />
+          </div>
+        </section>
+
+        <section id="payment" className="mb-16">
+          <h2 className="text-2xl font-bold mb-4">Payment</h2>
+          <p className="mb-4">Pay securely online to confirm your booking.</p>
+          <div className="grid gap-4">
+            <button className="bg-yellow-500 text-white px-4 py-2 rounded-md">Pay with UPI</button>
+            <button className="bg-blue-600 text-white px-4 py-2 rounded-md">Pay with Credit/Debit Card</button>
+            <button className="bg-gray-800 text-white px-4 py-2 rounded-md">Pay with Netbanking</button>
+          </div>
+        </section>
+
+        <footer className="mt-12 py-8 text-sm text-gray-600 text-center">
+          © {new Date().getFullYear()} Cricket Turf Booking — Play More, Worry Less
+        </footer>
+      </main>
+    </div>
+  );
+}
+
